@@ -1,17 +1,32 @@
-var NULL = [0,0,0,0];
-var VERT = [1,0,1,0];
-var HORI = [0,1,0,1];
+// deprecated
+// var NULL = [0,0,0,0];
+// var VERT = [1,0,1,0];
+// var HORI = [0,1,0,1];
+
+// var TOP_RIGHT = [1,1,0,0];
+// var BOTTOM_RIGHT = [0,1,1,0];
+// var BOTTOM_LEFT = [0,0,1,1];
+// var TOP_LEFT = [1,0,0,1];
+
+var NULL = [7,35];
+var VERT = [12,30];
+var HORI = [3,45];
+
+var TOP_RIGHT = [12,15];
+var BOTTOM_RIGHT = [3,30];
+var BOTTOM_LEFT = [6,45];
+var TOP_LEFT = [12,45];
 
 var ZERO = [
   // row one
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row two
   VERT,
-  [0,1,1,0],
-  [0,0,1,1],
+  BOTTOM_RIGHT,
+  BOTTOM_LEFT,
   VERT,
   // row three
   VERT,
@@ -25,121 +40,121 @@ var ZERO = [
   VERT,
   // row five
   VERT,
-  [1,1,0,0],
-  [1,0,0,1],
+  TOP_RIGHT,
+  TOP_LEFT,
   VERT,
   // row six
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
 ];
 
 var ONE = [
   // row one
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
-  [0,0,1,1],
-  [0,0,0,0],
+  BOTTOM_LEFT,
+  NULL,
   // row two
-  [1,1,0,0],
-  [0,0,1,1],
+  TOP_RIGHT,
+  BOTTOM_LEFT,
   VERT,
-  [0,0,0,0],
+  NULL,
   // row three
-  [0,0,0,0],
+  NULL,
   VERT,
   VERT,
-  [0,0,0,0],
+  NULL,
   // row four
-  [0,0,0,0],
+  NULL,
   VERT,
   VERT,
-  [0,0,0,0],
+  NULL,
   // row five
-  [0,1,1,0],
-  [1,0,0,1],
-  [1,1,0,0],
-  [0,0,1,1],
+  BOTTOM_RIGHT,
+  TOP_LEFT,
+  TOP_RIGHT,
+  BOTTOM_LEFT,
   // row six
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
 ];
 
 var TWO = [
   // row one
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row two
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   VERT,
   // row three
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
   VERT,
   // row four
   VERT,
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
   // row five
   VERT,
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row six
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
 ];
 
 var THREE = [
   // row one
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row two
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   VERT,
   // row three
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
   VERT,
   // row four
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   VERT,
   // row five
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
   VERT,
   // row six
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
 ];
 
 var FOUR = [
   // row one
-  [0,1,1,0],
-  [0,0,1,1],
-  [0,1,1,0],
-  [0,0,1,1],
+  BOTTOM_RIGHT,
+  BOTTOM_LEFT,
+  BOTTOM_RIGHT,
+  BOTTOM_LEFT,
   // row two
   VERT,
   VERT,
@@ -147,102 +162,102 @@ var FOUR = [
   VERT,
   // row three
   VERT,
-  [1,1,0,0],
-  [1,0,0,1],
+  TOP_RIGHT,
+  TOP_LEFT,
   VERT,
   // row four
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   VERT,
   // row five
-  [0,0,0,0],
-  [0,0,0,0],
+  NULL,
+  NULL,
   VERT,
   VERT,
   // row six
-  [0,0,0,0],
-  [0,0,0,0],
-  [1,1,0,0],
-  [1,0,0,1],
+  NULL,
+  NULL,
+  TOP_RIGHT,
+  TOP_LEFT,
 ];
 
 var FIVE = [
   // row one
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row two
   VERT,
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
   // row three
   VERT,
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row four
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   VERT,
   // row five
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
   VERT,
   // row six
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
 ];
 
 var SIX = [
   // row one
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row two
   VERT,
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
   // row three
   VERT,
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row four
   VERT,
-  [0,1,1,0],
-  [0,0,1,1],
+  BOTTOM_RIGHT,
+  BOTTOM_LEFT,
   VERT,
   // row five
   VERT,
-  [1,1,0,0],
-  [1,0,0,1],
+  TOP_RIGHT,
+  TOP_LEFT,
   VERT,
   // row six
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
 ];
 
 var SEVEN = [
   // row one
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row two
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   VERT,
   // row three
   NULL,
@@ -262,74 +277,74 @@ var SEVEN = [
   // row six
   NULL,
   NULL,
-  [1,1,0,0],
-  [1,0,0,1],
+  TOP_RIGHT,
+  TOP_LEFT,
 ];
 
 var EIGHT = [
   // row one
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row two
   VERT,
-  [0,1,1,0],
-  [0,0,1,1],
+  BOTTOM_RIGHT,
+  BOTTOM_LEFT,
   VERT,
   // row three
   VERT,
-  [1,1,0,0],
-  [1,0,0,1],
+  TOP_RIGHT,
+  TOP_LEFT,
   VERT,
   // row four
   VERT,
-  [0,1,1,0],
-  [0,0,1,1],
+  BOTTOM_RIGHT,
+  BOTTOM_LEFT,
   VERT,
   // row five
   VERT,
-  [1,1,0,0],
-  [1,0,0,1],
+  TOP_RIGHT,
+  TOP_LEFT,
   VERT,
   // row six
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
 ];
 
 var NINE = [
   // row one
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   // row two
   VERT,
-  [0,1,1,0],
-  [0,0,1,1],
+  BOTTOM_RIGHT,
+  BOTTOM_LEFT,
   VERT,
   // row three
   VERT,
-  [1,1,0,0],
-  [1,0,0,1],
+  TOP_RIGHT,
+  TOP_LEFT,
   VERT,
   // row four
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
-  [0,0,1,1],
+  BOTTOM_LEFT,
   VERT,
   // row five
-  [0,1,1,0],
+  BOTTOM_RIGHT,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
   VERT,
   // row six
-  [1,1,0,0],
+  TOP_RIGHT,
   HORI,
   HORI,
-  [1,0,0,1],
+  TOP_LEFT,
 ];
 
 var NUMERALS = [
