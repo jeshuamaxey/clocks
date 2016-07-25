@@ -1,28 +1,62 @@
 'use strict';
 
 function Clock(ctx, w, h, startTime, options) {
+  var VERTICAL = 'vertical';
+  var HORIZONTAL = 'horizontal';
+
   this.startMs = startTime.getTime();
   this.ticksElapsed = 0;
 
   var defaults = {
     seconds: false,
-    animationDuration: 750
+    animationDuration: 750,
+    arrangement: VERTICAL,
+    radius: 20
   };
 
   this.options = _.merge(defaults, options);
 
   var dy = this.options.seconds ? h/3 : h/2;
+  var dx = w/6;
 
-  this.digits = [
-    new Digit(ctx, {x: 0, y: 0}, 20),
-    new Digit(ctx, {x: w/2, y: 0}, 20),
-    new Digit(ctx, {x: 0, y: dy}, 20),
-    new Digit(ctx, {x: w/2, y: dy}, 20)
-  ];
+  if(this.options.arrangement === VERTICAL) {
+    this.digits = [
+      new Digit(ctx, {x: 0, y: 0}, this.options.radius),
+      new Digit(ctx, {x: w/2, y: 0}, this.options.radius),
+      new Digit(ctx, {x: 0, y: dy}, this.options.radius),
+      new Digit(ctx, {x: w/2, y: dy}, this.options.radius)
+    ];
 
-  if(this.options.seconds) {
-    this.digits.push(new Digit(ctx, {x: 0, y: 2*dy}, 20));
-    this.digits.push(new Digit(ctx, {x: w/2, y: 2*dy}, 20));
+    if(this.options.seconds) {
+      this.digits.push(new Digit(ctx, {x: 0, y: 2*dy}, this.options.radius));
+      this.digits.push(new Digit(ctx, {x: w/2, y: 2*dy}, this.options.radius));
+    }
+  } else if(HORIZONTAL) {
+    this.digits = [
+      new Digit(ctx, {x: 0, y: 0}, this.options.radius),
+      new Digit(ctx, {x: dx, y: 0}, this.options.radius),
+      new Digit(ctx, {
+        x: 2*dx,
+        y: 0
+      }, this.options.radius),
+      new Digit(ctx, {
+        x: 3*dx,
+        y: 0
+      }, this.options.radius)
+    ];
+
+    if(this.options.seconds) {
+      this.digits.push(new Digit(ctx, {
+        x: 4*dx,
+        y: 0
+      }, this.options.radius));
+      this.digits.push(new Digit(ctx, {
+        x: 5*dx,
+        y: 0
+      }, this.options.radius));
+    }
+  } else {
+    throw new Error('arrangement must be set to either \'horizontal\' or \'vertical\'.');
   }
 }
 

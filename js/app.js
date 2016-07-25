@@ -11,8 +11,11 @@ function go() {
   }
   var ctx = canvas.getContext('2d');
   var options = {
-    seconds: true
+    seconds: true,
+    animationDuration: 750,
+    arrangement: 'horizontal'
   };
+
   var clock = new Clock(ctx, canvas.width, canvas.height, new Date(), options);
   clock.start();
 }
