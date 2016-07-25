@@ -1,13 +1,3 @@
-// deprecated
-// var NULL = [0,0,0,0];
-// var VERT = [1,0,1,0];
-// var HORI = [0,1,0,1];
-
-// var TOP_RIGHT = [1,1,0,0];
-// var BOTTOM_RIGHT = [0,1,1,0];
-// var BOTTOM_LEFT = [0,0,1,1];
-// var TOP_LEFT = [1,0,0,1];
-
 var NULL = [7,35];
 var VERT = [12,30];
 var HORI = [3,45];
