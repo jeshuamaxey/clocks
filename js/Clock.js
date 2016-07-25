@@ -3,7 +3,13 @@
 function Clock(ctx, w, h, startTime, options) {
   this.startMs = startTime.getTime();
   this.ticksElapsed = 0;
-  this.options = options;
+
+  var defaults = {
+    seconds: false,
+    animationDuration: 750
+  };
+
+  this.options = _.merge(defaults, options);
 
   var dy = this.options.seconds ? h/3 : h/2;
 
@@ -22,8 +28,8 @@ function Clock(ctx, w, h, startTime, options) {
 
 Clock.prototype._draw = function() {
   this.digits.forEach(function(digit) {
-    digit.draw(750);
-  });
+    digit.draw(this.options.animationDuration);
+  }.bind(this));
 };
 
 Clock.prototype.tick = function(t) {
