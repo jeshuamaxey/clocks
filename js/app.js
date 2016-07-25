@@ -14,4 +14,5 @@ function go() {
     seconds: true
   };
   var clock = new Clock(ctx, canvas.width, canvas.height, new Date(), options);
+  clock.start();
 }
