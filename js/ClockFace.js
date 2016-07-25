@@ -1,3 +1,5 @@
+'use strict';
+
 function ClockFace(ctx, pos, radius, initialDirections, initialTime) {
   this.NUMBER_OF_HANDS = 2;
 

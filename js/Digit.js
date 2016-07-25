@@ -1,3 +1,5 @@
+'use strict';
+
 var Digit = function(ctx, pos, radius) {
   var NUMBER_OF_ROWS = 6;
   var NUMBER_OF_CLOCKS_PER_ROW = 4;
